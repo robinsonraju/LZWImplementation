@@ -4,7 +4,6 @@
  */
 package edu.sjsu.algoclass.compress.lzw;
 
-import edu.sjsu.algoclass.compress.lzw.Dictionary;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

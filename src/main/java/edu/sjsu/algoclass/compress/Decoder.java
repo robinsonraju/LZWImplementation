@@ -6,5 +6,6 @@ package edu.sjsu.algoclass.compress;
  */
 public interface Decoder {
 
-    public void decompressFile(String inputFile, String outputFile);
+    public void decompressFile(String inputFile, String outputFile) 
+            throws Exception;
 }

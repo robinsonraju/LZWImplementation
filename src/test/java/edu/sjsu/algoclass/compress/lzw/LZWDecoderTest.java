@@ -1,6 +1,8 @@
 package edu.sjsu.algoclass.compress.lzw;
 
 import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,25 +32,30 @@ public class LZWDecoderTest {
 
     @After
     public void tearDown() {
-        cleanUpOutputFiles();
+        //cleanUpOutputFiles();
     }
 
     /**
      * Test compressFile method
      */
     @Test
-    public void testCompressFile() {
-        // Compress the input
-        encoder.compressFile(ENC_INPUT, ENC_OUTPUT);
+    public void testDecompressFile() {
+        try {
+            // Compress the input
+            encoder.compressFile(ENC_INPUT, ENC_OUTPUT);
 
-        // Check if the output file is of length > 0
-        assertTrue((new File(ENC_OUTPUT)).length() > 0);
+            // Check if the output file is of length > 0
+            assertTrue((new File(ENC_OUTPUT)).length() > 0);
 
-        // Decompress the input
-        decoder.decompressFile(ENC_OUTPUT, DEC_OUTPUT);
+            // Decompress the input
+            decoder.decompressFile(ENC_OUTPUT, DEC_OUTPUT);
 
-        // Check if the output file is of length > 0
-        assertTrue((new File(DEC_OUTPUT)).length() > 0);
+            // Check if the output file is of length > 0
+            assertTrue((new File(DEC_OUTPUT)).length() > 0);
+        } catch (Exception ex) {
+            Logger.getLogger(LZWDecoderTest.class.getName()).log(Level.SEVERE, null, ex);
+            fail();
+        }
     }
 
     private void cleanUpOutputFiles() {

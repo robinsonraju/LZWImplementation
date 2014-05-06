@@ -20,7 +20,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * This class is an implementation of LZW Compression algorithm. 
+ * 
  * @author rraju
  */
 public class LZWEncoder implements Encoder {

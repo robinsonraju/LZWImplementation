@@ -13,7 +13,7 @@ import java.util.Map;
  */
 public class Dictionary {
 
-    // Size of the lookup_table. To initialize with first 128 characters in the ASCII table
+    // Size of the lookup_table. To initialize with first 256 characters
     private int LT_SIZE = 256;
     private Map<String, Integer> lookup_table = null;
     private Map<Integer, String> reverse_lookup_table = null;

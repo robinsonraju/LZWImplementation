@@ -28,7 +28,8 @@ public class LZWDecoder implements Decoder {
      * @param inputFile
      * @param outputFile
      */
-    public void decompressFile(String inputFile, String outputFile) {
+    public void decompressFile(String inputFile, String outputFile) 
+                throws Exception {
         Dictionary dictionary = new Dictionary();
 
         Reader in = null;
@@ -66,6 +67,7 @@ public class LZWDecoder implements Decoder {
             Logger.getLogger(LZWEncoder.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
             ex.printStackTrace();
+            throw new Exception(ex);
         } finally {
             try {
                 in.close();

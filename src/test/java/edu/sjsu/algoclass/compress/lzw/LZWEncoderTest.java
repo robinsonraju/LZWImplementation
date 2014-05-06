@@ -1,11 +1,6 @@
 package edu.sjsu.algoclass.compress.lzw;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -32,7 +27,7 @@ public class LZWEncoderTest {
 
     @After
     public void tearDown() {
-        cleanUpOutputFiles();
+        //cleanUpOutputFiles();
     }
 
     /**
