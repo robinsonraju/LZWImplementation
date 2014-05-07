@@ -100,21 +100,26 @@ The core principle is that the compressor reads one string (x) at a time and sea
 <p>This can be best illustrated with this example. 
 We will use a portion of the example given in “Data Compression – The Complete Reference”1 for the sake of brevity - “sir sid eastman”. We’ll represent space with “_”</p>
 
-<p>The steps are as follows:
-1.  Initialize: The dictionary is initialized with the first 256 characters to give codes from 0 to 255. 
-2.  Process “s”: The compressor reads one character at a time and the first one is “s”. The lookup returns true and since it is found, the process continues. 
-3.  Process “si”: The current word/phrase = current character + previous word/phrase found in the dictionary. In the current step, it would be “si” 
-a.  Since “si” is not found in the dictionary, the compressor does the following – 
-i.  Outputs code for s – 115
-ii. Stores si as the next entry in the dictionary with code 256.
-iii.    Sets “prev word” = i
-4.  Process “i”: The current word/phrase = current char + prev word. In the current step, it would be “ir” 
-a.  Since “ir” is not found in the dictionary, the compressor does the following – 
-i.  Outputs code for i – 105
-ii. Stores ir as the next entry in the dictionary with code 257.
-iii.    Sets “prev word” = r
- 
-5.  The process continues. The table below shows all the steps for “sir_sid_eastman”</p>
+<p>The steps are as follows:</p>
+
+<blockquote>
+<ol>
+<li>   Initialize: The dictionary is initialized with the first 256 characters to give codes from 0 to 255. </li>
+<li>   Process “s”: The compressor reads one character at a time and the first one is “s”. The lookup returns true and since it is found, the process continues. </li>
+<li>   Process “si”: The current word/phrase = current character + previous word/phrase found in the dictionary. In the current step, it would be “si” 
+a.    Since “si” is not found in the dictionary, the compressor does the following – 
+i.    Outputs code for s – 115
+ii.   Stores si as the next entry in the dictionary with code 256.
+iii.  Sets “prev word” = i</li>
+<li>   Process “i”: The current word/phrase = current char + prev word. In the current step, it would be “ir” 
+a.    Since “ir” is not found in the dictionary, the compressor does the following – 
+i.    Outputs code for i – 105
+ii.   Stores ir as the next entry in the dictionary with code 257.
+iii.  Sets “prev word” = r
+ </li>
+<li>   The process continues. The table below shows all the steps for “sir_sid_eastman”</li>
+</ol>
+</blockquote>
 
 <p>x   In dictionary   New Entry   Output</p>
 
