@@ -16,7 +16,7 @@ import junit.framework.TestCase;
  */
 public class FileUtilTest extends TestCase {
 
-    private static String INPUT = "/temp/input.txt";
+    private static String INPUT = "/tmp/input.txt";
 
     public void testReadInFile() {
         File inputFile = new File(INPUT);
@@ -26,7 +26,7 @@ public class FileUtilTest extends TestCase {
         } catch (IOException ex) {
             Logger.getLogger(FileUtilTest.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         assertNotNull(data);
     }
 }

@@ -14,9 +14,9 @@ import static org.junit.Assert.*;
  */
 public class LZWDecoderTest {
 
-    private static String ENC_INPUT = "/temp/input.txt";
-    private static String ENC_OUTPUT = "/temp/enc-output.txt";
-    private static String DEC_OUTPUT = "/temp/dec-output.txt";
+    private static String ENC_INPUT = "/tmp/input.txt";
+    private static String ENC_OUTPUT = "/tmp/enc-output.txt";
+    private static String DEC_OUTPUT = "/tmp/dec-output.txt";
     LZWEncoder encoder = null;
     LZWDecoder decoder = null;
 

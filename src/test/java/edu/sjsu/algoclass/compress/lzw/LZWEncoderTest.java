@@ -12,8 +12,8 @@ import static org.junit.Assert.*;
  */
 public class LZWEncoderTest {
 
-    private static String INPUT = "/temp/input.txt";
-    private static String OUTPUT = "/temp/output.txt";
+    private static String INPUT = "/tmp/input.txt";
+    private static String OUTPUT = "/tmp/output.txt";
     LZWEncoder encoder = null;
 
     public LZWEncoderTest() {
@@ -61,7 +61,7 @@ public class LZWEncoderTest {
         assertEquals("115 105 114 32 256 100", res2);
 
     }
-    
+
     private void cleanUpOutputFiles() {
         File enc_output = new File(OUTPUT);
         if (enc_output.exists()) {
